@@ -1,6 +1,8 @@
 package edu.euler;
 
 
+import edu.euler.problem7.PrimeNumber;
+
 import java.math.BigInteger;
 
 public class Main {
@@ -260,7 +262,7 @@ public class Main {
 
         Long sumOfPrimeBelowTwoMilion = 0L;
         for (long i=1;i<2000000;i++) {
-            if (IsThePrimeNumber(i) == Boolean.TRUE) {
+            if (PrimeNumber.isThePrimeNumber(i) == Boolean.TRUE) {
                 sumOfPrimeBelowTwoMilion+=i;
             }
         }
@@ -325,37 +327,7 @@ public class Main {
 
     }
 
-    private static void task7() {
-        Long number = 0L;
-        Integer counter = 0;
 
-        while(counter != 10001) {
-            number++;
-            if (IsThePrimeNumber(number) == Boolean.TRUE) {
-                counter++;
-            }
-
-        }
-        System.out.println("10001 liczba pierwsza to: " + number);
-
-    }
-
-    private static boolean IsThePrimeNumber(Long number){
-        Long c=2L;
-
-        if(number <= 0 || number == 1) return Boolean.FALSE;
-
-        for (Long i = 2L;i<number;i++) {
-            if (number % i == 0) {
-                c++;
-                if( c > 2) break;
-            }
-        }
-        if (c == 2) {
-            return Boolean.TRUE;
-        }
-        return Boolean.FALSE;
-    }
 
 
 }

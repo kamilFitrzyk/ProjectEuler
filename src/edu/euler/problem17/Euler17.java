@@ -74,7 +74,7 @@ public class Euler17 {
 
             }
         }
-        logger.log(Level.INFO, "Answer: Euler17: {}", counter);
+        logger.log(Level.INFO, "Answer: Euler17: {0}", counter);
 
     }
 

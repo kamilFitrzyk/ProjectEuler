@@ -23,6 +23,6 @@ public class Euler19 {
             start = start.plusMonths(1);
         } while (start.isBefore(stop));
 
-        logger.log(Level.INFO, "Answer: {}", counter);
+        logger.log(Level.INFO, "Answer: {0}", counter);
     }
 }
