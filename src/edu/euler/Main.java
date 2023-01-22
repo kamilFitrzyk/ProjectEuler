@@ -11,11 +11,6 @@ public class Main {
 
     }
 
-    private static void taks14() {
-        Euler euler = new Euler();
-        euler.run();
-    }
-
     private static void task20() {
 
         BigInteger multiple = new BigInteger("1");

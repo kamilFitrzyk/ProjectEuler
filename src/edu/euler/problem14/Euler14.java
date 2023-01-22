@@ -1,11 +1,17 @@
-package edu.euler;
+package edu.euler.problem14;
+
+import edu.euler.problem17.Euler17;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class Euler {
+public class Euler14 {
+    public static void main(String[] args) {
 
-    public void run() {
+        Logger logger = Logger.getLogger(Euler17.class.getName());
+
         long max = 0L;
         long maxnr = 0L;
         long counter = 0L;
@@ -14,33 +20,26 @@ public class Euler {
         Map<Long, Long> cache = new HashMap<>();
         long startTime = System.nanoTime();
         for (long x = 1L; x < 1000000L; x++) {
-            //System.out.print("For: " + x);
             counter = 1L;
 
-
-            i=x;
+            i = x;
             do {
 
                 if (cache.containsKey(i)) {
-                    counter+=cache.get(i);
+                    counter += cache.get(i);
                     break;
                 }
 
-
                 if ((i % 2L) == 0L) {
-                    i = i/2L;
-                    //System.out.print(" -> " + i);
+                    i = i / 2L;
                 } else {
-                    i = i*3+1;
-                    //System.out.print(" -> " + i);
+                    i = i * 3 + 1;
                 }
                 counter = counter + 1L;
-            } while (i!=1L);
+            } while (i != 1L);
 
             cache.put(x, counter);
 
-            //System.out.println(", length chain: " + counter);
-            //System.out.print(" " + counter);
             if (counter > maxnr) {
                 max = x;
                 maxnr = counter;
@@ -48,14 +47,13 @@ public class Euler {
             }
 
         }
-        System.out.println("the Longest chain: " + max);
-        System.out.println("the Longest chain: " + maxnr);
+        logger.log(Level.INFO, "Answer: the Longest chain: {0}", max);
+        logger.log(Level.INFO, "Answer: the Longest chain: {0} ", maxnr);
 
 
         long endTime = System.nanoTime();
 
         long duration = (endTime - startTime);  //divide by 1000000 to get milliseconds.
-        System.out.println(duration);
+        logger.log(Level.INFO, "Answer: duration: {0} ", duration);
     }
-
 }
