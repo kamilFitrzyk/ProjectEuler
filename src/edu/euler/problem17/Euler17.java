@@ -1,13 +1,16 @@
-package edu.euler;
+package edu.euler.problem17;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Euler17 {
 
 
     public static void main(String[] args) {
         Map<Integer, Integer> numberCounterMap = new HashMap<>();
+        Logger logger = Logger.getLogger(Euler17.class.getName());
 
         numberCounterMap.put(0, 0);
         numberCounterMap.put(1, 3);
@@ -71,7 +74,7 @@ public class Euler17 {
 
             }
         }
-        System.out.println(counter);
+        logger.log(Level.INFO, "Answer: Euler17: {}", counter);
 
     }
 
